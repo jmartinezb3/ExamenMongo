@@ -1,26 +1,27 @@
 const model = require('./modelo')
 
-function agregarEmpleado( empleado ) {
-    const objeto = new model( empleado )
+function agregarEmpleado( proyecto ) {
+    const objeto = new model( proyecto )
     objeto.save()
 }
 
-function obtenerEmpleados( filtroEmpleado ) {
+function obtenerEmpleados( filtroProyecto ) {
     let filtro = {}
-    if (filtroEmpleado) {
-        filtro = { cedula: filtroEmpleado }
+    if (filtroProyecto) {
+        filtro = { titulo: filtroProyecto }
     }
     const objeto = model.find( filtro )
+    console.log(objeto)
     return objeto
 }
 
 async function actualizarEmpleado( empleado ) {
     const objeto = await model.findOne( {cedula: empleado.cedula} )
     
-    objeto.nombre = empleado.nombre
-    objeto.apellido = empleado.apellido
-    objeto.usuario = empleado.usuario
-    objeto.clave = empleado.clave    
+    objeto.titulo = empleado.titulo
+    objeto.fechainicio = empleado.fechainicio
+    objeto.fechafin = empleado.fechafin
+    objeto.descripcion = empleado.descripcion    
 
     const resultado = await objeto.save()
     return resultado

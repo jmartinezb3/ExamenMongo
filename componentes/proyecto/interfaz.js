@@ -5,7 +5,7 @@ const controlador = require('./controlador')
 const ruta = express.Router()
 
 ruta.get('/', function(req, res) {
-    const filtroEmpleado = req.query.cedula || null
+    const filtroEmpleado = req.query.titulo || null
     controlador.obtenerEmpleados( filtroEmpleado )
         .then((data) => {
             respuesta.exito(req, res, data, 200)

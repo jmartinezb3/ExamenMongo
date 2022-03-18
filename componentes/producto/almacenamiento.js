@@ -11,6 +11,7 @@ function obtenerProductos( filtroProducto ) {
         filtro = { codigo: filtroProducto }
     }
     const objeto = model.find( filtro )
+    
     return objeto
 }
 

@@ -7,9 +7,9 @@ function agregarEmpleado( empleado ) {
     })
 }
 
-function obtenerEmpleados( filtroEmpleado ) {
+function obtenerEmpleados( filtroProyecto ) {
     return new Promise((resolve, reject) => {
-        resolve( storage.obtener( filtroEmpleado ) )
+        resolve( storage.obtener( filtroProyecto ) )
     })
 }
 

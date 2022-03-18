@@ -6,7 +6,7 @@ async function conectar(uri) {
     await bd.connect(uri, {
         useNewUrlParser:true,
         useUnifiedTopology:true,
-        dbName:'tiendita_jmartinez'
+        dbName:'ProyectManager'
     })
     .then((data) => {
         console.log('[db] - Conexión exitosa.')
